@@ -8,7 +8,7 @@ function MovieContainer({movie}) {
                   {movie.map(mov => (
                     <div className="movie-card">
                         <div key={mov.imdbID} className="movie-background">
-                          <img src={mov.Poster} alt="" />
+                              <img src={mov.Poster !== 'N/A' ? mov.Poster : `../logo512.png` } alt="" />
                         </div>
                         <div className="movie-info">
                             <p id='movie-title'> {mov.Title} </p>
