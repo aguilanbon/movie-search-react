@@ -15,19 +15,22 @@ h1 {
 
 input {
   min-height: 2em;
+  border-radius: .5em 0   0 .5em;
+  border: 0;
+  padding-left: 1em;
 }
 
 button {
   border: 0;
   outline: none;
   width: 100px;
-  height: 2.22em;
+  height: 2em;
   cursor: pointer;
   border-radius: 0 .5em .5em 0;
 }
 
 button:hover {
-  background-color: aquamarine;
+  background-color: rgb(22, 184, 130);
 }
 
 .movie-container {
