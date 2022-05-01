@@ -17,8 +17,6 @@ function App() {
 				setmovie(arr);
 				console.log(arr);
 			});
-
-		console.log(pageNo);
 	};
 
 	useEffect(() => {

@@ -9,25 +9,28 @@ function Header({searchTerm, setsearchTerm, searchMovies, setmovieTitle}) {
               </a>
           </h1>
           <footer>omdb api search index</footer>
-          <input
-              type="text"
-              name=""
-              id=""
-              placeholder="Movie title"
-              value={searchTerm}
-              onChange={(e) => {
-                  setsearchTerm(e.target.value);
-              }}
-          />
-          <button
-              onClick={() => {
-                  searchMovies(searchTerm, 1);
-                  setmovieTitle(searchTerm);
-                  // setsearchTerm('');
-              }}
-          >
-              Search
-          </button>
+          <div className="input-container">
+        <input
+          type="text"
+          name=""
+          id=""
+          placeholder="type movie title"
+          value={searchTerm}
+          onChange={(e) => {
+            setsearchTerm(e.target.value);
+          }}
+        />
+        <button
+          onClick={() => {
+            searchMovies(searchTerm, 1);
+            setmovieTitle(searchTerm);
+            // setsearchTerm('');
+          }}
+        >
+          <p>Search</p>
+        </button>
+          </div>
+          
     </div>
   )
 }

@@ -29,7 +29,8 @@ function MovieContainer({movie, userSearch, searchTerm, nextPage}) {
 
               :
               <div className='movie-card-container'>
-            <h2>No movies found</h2>
+            <h2>No movies found for "{userSearch}"</h2>
+            <img src="../error.png" alt="" style={{height: 150, marginTop: 40}}/>
           </div>
         }
 

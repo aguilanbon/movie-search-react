@@ -26,13 +26,23 @@ footer {
 }
 
 i {
-  color: wheat;
+  color: white;
   cursor: pointer;
 }
 
 a {
   text-decoration: none;
-  color: wheat;
+  color: white;
+}
+
+.input-container {
+  margin: 0 auto;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  max-width: 25%;
+  max-height: 1em;
 }
 
 input {
@@ -47,16 +57,27 @@ input:focus {
 }
 
 button {
+  background-color: rgb(22, 184, 130);
   border: 0;
   outline: none;
   width: 100px;
-  height: 2em;
+  padding: 0 1em;
+  min-height: 2em;
   cursor: pointer;
   border-radius: 0 .5em .5em 0;
+  color: white;
 }
 
 button:hover {
-  background-color: rgb(22, 184, 130);
+  background-color: rgb(7, 154, 105);
+}
+
+input::placeholder {
+  font-size: .8em;
+}
+
+button p {
+  font-size: .7em;
 }
 
 .movie-container {
