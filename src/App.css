@@ -25,6 +25,11 @@ footer {
   margin-bottom: 2.5em;
 }
 
+i {
+  color: wheat;
+  cursor: pointer;
+}
+
 input {
   min-height: 2em;
   border-radius: .5em 0   0 .5em;

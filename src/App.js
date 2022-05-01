@@ -1,12 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Footer from './components/Footer';
+import Header from './components/Header';
 import MovieContainer from './components/MovieContainer';
 
 function App() {
 	const [ searchTerm, setsearchTerm ] = useState([]);
 	const [ movie, setmovie ] = useState([]);
 	const [ movieTitle, setmovieTitle ] = useState('');
+	const [ counter, setcounter ] = useState(1);
 
 	const searchMovies = async (title) => {
 		await fetch(`http://www.omdbapi.com/?s=${title}&apikey=d3a0d17b`).then((data) => data.json()).then((el) => {
@@ -16,36 +18,29 @@ function App() {
 		});
 	};
 
+	const nextPage = async (title) => {
+		setcounter(counter + 1);
+		await fetch(`http://www.omdbapi.com/?s=${title}&apikey=d3a0d17b&page=${counter}`)
+			.then((data) => data.json())
+			.then((el) => {
+				const arr = el.Search;
+				setmovie(arr);
+			});
+	};
+
 	useEffect(() => {
 		searchMovies('avengers');
 	}, []);
 
 	return (
 		<div className="App">
-			<h1>
-				<span style={{ color: '#16b882' }}>b</span>movies
-			</h1>
-			<footer>omdb api search index</footer>
-			<input
-				type="text"
-				name=""
-				id=""
-				placeholder="Movie title"
-				value={searchTerm}
-				onChange={(e) => {
-					setsearchTerm(e.target.value);
-				}}
+			<Header
+				searchTerm={searchTerm}
+				setsearchTerm={setsearchTerm}
+				searchMovies={searchMovies}
+				setmovieTitle={setmovieTitle}
 			/>
-			<button
-				onClick={() => {
-					searchMovies(searchTerm);
-					setmovieTitle(searchTerm);
-					setsearchTerm('');
-				}}
-			>
-				Search
-			</button>
-			<MovieContainer movie={movie} userSearch={movieTitle} />
+			<MovieContainer movie={movie} userSearch={movieTitle} searchTerm={searchTerm} nextPage={nextPage} />
 			<Footer />
 		</div>
 	);
