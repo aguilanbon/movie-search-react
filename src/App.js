@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
+import Footer from './components/Footer';
 import MovieContainer from './components/MovieContainer';
 
 function App() {
@@ -25,7 +26,6 @@ function App() {
 				<span style={{ color: '#16b882' }}>b</span>movies
 			</h1>
 			<footer>omdb api search index</footer>
-			{/* <footer>Search results for {searchTerm}</footer> */}
 			<input
 				type="text"
 				name=""
@@ -46,6 +46,7 @@ function App() {
 				Search
 			</button>
 			<MovieContainer movie={movie} userSearch={movieTitle} />
+			<Footer />
 		</div>
 	);
 }

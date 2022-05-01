@@ -5,12 +5,12 @@ function MovieContainer({movie, userSearch}) {
     <div className='movie-container'>
         { movie?.length > 0 ?
               <div className='movie-card-container'>
-          {userSearch && <footer>search results for {userSearch}</footer>}
+          {userSearch && <footer>search results for "{userSearch}"</footer>}
                 
                   {movie.map(mov => (
                     <div className="movie-card">
                         <div key={mov.imdbID} className="movie-background">
-                              <img src={mov.Poster !== 'N/A' ? mov.Poster : `../logo512.png` } alt="" />
+                              <img src={mov.Poster !== 'N/A' ? mov.Poster : `../file.png` } alt="" />
                         </div>
                         <div className="movie-info">
                             <p id='movie-title'> {mov.Title} </p>
