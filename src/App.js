@@ -6,26 +6,24 @@ function App() {
 	const [ searchTerm, setsearchTerm ] = useState([]);
 	const [ movie, setmovie ] = useState([]);
 
-	const defaultMovies = async () => {
-		await fetch(`http://www.omdbapi.com/?s=star&wars}&apikey=d3a0d17b`).then((data) => data.json()).then((el) => {
+	// const defaultMovies = async () => {
+	// 	await fetch(`http://www.omdbapi.com/?s=star&wars}&apikey=d3a0d17b`).then((data) => data.json()).then((el) => {
+	// 		const arr = el.Search;
+	// 		setmovie(arr);
+	// 		console.log(arr);
+	// 	});
+	// };
+
+	const searchMovies = async (title) => {
+		await fetch(`http://www.omdbapi.com/?s=${title}&apikey=d3a0d17b`).then((data) => data.json()).then((el) => {
 			const arr = el.Search;
 			setmovie(arr);
 			console.log(arr);
 		});
 	};
 
-	const searchMovies = async () => {
-		await fetch(`http://www.omdbapi.com/?s=${searchTerm}&apikey=d3a0d17b`)
-			.then((data) => data.json())
-			.then((el) => {
-				const arr = el.Search;
-				setmovie(arr);
-				console.log(arr);
-			});
-	};
-
 	useEffect(() => {
-		defaultMovies();
+		searchMovies('avengers');
 	}, []);
 
 	return (
@@ -41,7 +39,7 @@ function App() {
 					setsearchTerm(e.target.value);
 				}}
 			/>
-			<button onClick={searchMovies}>Search</button>
+			<button onClick={() => searchMovies(searchTerm)}>Search</button>
 			<MovieContainer movie={movie} />
 		</div>
 	);
