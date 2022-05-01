@@ -30,6 +30,11 @@ i {
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+  color: wheat;
+}
+
 input {
   min-height: 2em;
   border-radius: .5em 0   0 .5em;

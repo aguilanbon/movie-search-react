@@ -4,7 +4,9 @@ function Header({searchTerm, setsearchTerm, searchMovies, setmovieTitle}) {
   return (
     <div>
           <h1>
-              <span style={{ color: '#16b882' }}>b</span>movies
+              <a href="/">
+                <span style={{ color: '#16b882' }}>b</span>movies
+              </a>
           </h1>
           <footer>omdb api search index</footer>
           <input
@@ -19,7 +21,7 @@ function Header({searchTerm, setsearchTerm, searchMovies, setmovieTitle}) {
           />
           <button
               onClick={() => {
-                  searchMovies(searchTerm);
+                  searchMovies(searchTerm, 1);
                   setmovieTitle(searchTerm);
                   // setsearchTerm('');
               }}

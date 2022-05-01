@@ -8,8 +8,8 @@ function MovieContainer({movie, userSearch, searchTerm, nextPage}) {
           <div className='movie-card-container'>
           {userSearch && <footer>search results for "{userSearch}"</footer>}
               {movie.map(mov => (
-                <div className="movie-card" key={mov.imdbID} >
-                    <div className="movie-background">
+                <div className="movie-card" key={mov.imdbID}>
+                    <div  className="movie-background">
                           <img src={mov.Poster !== 'N/A' ? mov.Poster : `../file.png` } alt="" />
                     </div>
                     <div className="movie-info">
@@ -23,9 +23,9 @@ function MovieContainer({movie, userSearch, searchTerm, nextPage}) {
               ))}
             <div className="nextPrev">
               <i>👈 Previous Page |</i>
-              <i onClick={() => nextPage(searchTerm)}> Next Page 👉</i>
+              <i> Next Page 👉</i>
             </div>
-            </div> 
+          </div> 
 
               :
               <div className='movie-card-container'>
