@@ -3,6 +3,7 @@ import React from 'react'
 function MovieContainer({movie}) {
   return (
     <div className='movie-container'>
+        
         { movie?.length > 0 ?
               <div className='movie-card-container'>
                   {movie.map(mov => (
@@ -21,7 +22,9 @@ function MovieContainer({movie}) {
                   ))}
               </div> 
               :
-              <h1>no movies found</h1>
+          <div className='movie-card-container'>
+            <h2>No movies found</h2>
+          </div>
         }
 
     </div>

@@ -1,18 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 import MovieContainer from './components/MovieContainer';
 
 function App() {
 	const [ searchTerm, setsearchTerm ] = useState([]);
 	const [ movie, setmovie ] = useState([]);
-
-	// const defaultMovies = async () => {
-	// 	await fetch(`http://www.omdbapi.com/?s=star&wars}&apikey=d3a0d17b`).then((data) => data.json()).then((el) => {
-	// 		const arr = el.Search;
-	// 		setmovie(arr);
-	// 		console.log(arr);
-	// 	});
-	// };
 
 	const searchMovies = async (title) => {
 		await fetch(`http://www.omdbapi.com/?s=${title}&apikey=d3a0d17b`).then((data) => data.json()).then((el) => {
@@ -28,7 +20,11 @@ function App() {
 
 	return (
 		<div className="App">
-			<h1>bmovies</h1>
+			<h1>
+				<span style={{ color: '#16b882' }}>b</span>movies
+			</h1>
+			<footer>omdb api search index</footer>
+			{/* <footer>Search results for {searchTerm}</footer> */}
 			<input
 				type="text"
 				name=""
@@ -39,7 +35,14 @@ function App() {
 					setsearchTerm(e.target.value);
 				}}
 			/>
-			<button onClick={() => searchMovies(searchTerm)}>Search</button>
+			<button
+				onClick={() => {
+					searchMovies(searchTerm);
+					setsearchTerm('');
+				}}
+			>
+				Search
+			</button>
 			<MovieContainer movie={movie} />
 		</div>
 	);

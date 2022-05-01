@@ -10,7 +10,19 @@ body {
 
 h1 {
   color: white;
-  margin: 1em 0;
+  margin: 1em 0 0 0;
+}
+
+h2 {
+  color: rgb(22, 184, 130);
+  margin: 1em 0 0 0;
+}
+
+footer {
+  color: white;
+  opacity: .5;
+  font-size: .7em;
+  margin-bottom: 1em;
 }
 
 input {
@@ -18,6 +30,10 @@ input {
   border-radius: .5em 0   0 .5em;
   border: 0;
   padding-left: 1em;
+}
+
+input:focus {
+  outline: none;
 }
 
 button {
