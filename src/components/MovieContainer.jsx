@@ -1,11 +1,12 @@
 import React from 'react'
 
-function MovieContainer({movie}) {
+function MovieContainer({movie, userSearch}) {
   return (
     <div className='movie-container'>
-        
         { movie?.length > 0 ?
               <div className='movie-card-container'>
+          {userSearch && <footer>search results for {userSearch}</footer>}
+                
                   {movie.map(mov => (
                     <div className="movie-card">
                         <div key={mov.imdbID} className="movie-background">

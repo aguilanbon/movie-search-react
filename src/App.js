@@ -5,6 +5,7 @@ import MovieContainer from './components/MovieContainer';
 function App() {
 	const [ searchTerm, setsearchTerm ] = useState([]);
 	const [ movie, setmovie ] = useState([]);
+	const [ movieTitle, setmovieTitle ] = useState('');
 
 	const searchMovies = async (title) => {
 		await fetch(`http://www.omdbapi.com/?s=${title}&apikey=d3a0d17b`).then((data) => data.json()).then((el) => {
@@ -38,12 +39,13 @@ function App() {
 			<button
 				onClick={() => {
 					searchMovies(searchTerm);
+					setmovieTitle(searchTerm);
 					setsearchTerm('');
 				}}
 			>
 				Search
 			</button>
-			<MovieContainer movie={movie} />
+			<MovieContainer movie={movie} userSearch={movieTitle} />
 		</div>
 	);
 }
