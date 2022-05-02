@@ -1,7 +1,6 @@
 import React from 'react'
 
-function MovieContainer({movie, userSearch, searchTerm, nextPage}) {
-
+function MovieContainer({movie, userSearch, searchTerm, searchMovies}) {
   return (
     <div className='movie-container'>
         { movie?.length > 0 ?

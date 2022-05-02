@@ -9,18 +9,15 @@ function App() {
 	const [ movie, setmovie ] = useState([]);
 	const [ movieTitle, setmovieTitle ] = useState('');
 
-	const searchMovies = async (title, pageNo) => {
-		await fetch(`http://www.omdbapi.com/?s=${title}&apikey=d3a0d17b&p=${pageNo}`)
-			.then((data) => data.json())
-			.then((el) => {
-				const arr = el.Search;
-				setmovie(arr);
-				console.log(arr);
-			});
+	const searchMovies = async (title) => {
+		await fetch(`http://www.omdbapi.com/?s=${title}&apikey=d3a0d17b`).then((data) => data.json()).then((el) => {
+			const arr = el.Search;
+			setmovie(arr);
+		});
 	};
 
 	useEffect(() => {
-		searchMovies('avengers', 1);
+		searchMovies('avengers');
 	}, []);
 
 	return (

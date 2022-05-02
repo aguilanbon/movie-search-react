@@ -22,7 +22,7 @@ function Header({searchTerm, setsearchTerm, searchMovies, setmovieTitle}) {
         />
         <button
           onClick={() => {
-            searchMovies(searchTerm, 1);
+            searchMovies(searchTerm);
             setmovieTitle(searchTerm);
             // setsearchTerm('');
           }}
