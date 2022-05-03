@@ -13,7 +13,6 @@ function App() {
 		await fetch(`http://www.omdbapi.com/?s=${title}&apikey=d3a0d17b`).then((data) => data.json()).then((el) => {
 			const arr = el.Search;
 			setmovie(arr);
-			console.log(movie);
 		});
 	};
 
