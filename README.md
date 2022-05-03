@@ -1,4 +1,4 @@
-A simple movie search API 
+A simple movie search API
 
 using omdbAPI
 
