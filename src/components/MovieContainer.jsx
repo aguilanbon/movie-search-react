@@ -20,10 +20,6 @@ function MovieContainer({movie, userSearch, searchTerm, searchMovies}) {
                     </div>
                 </div>
               ))}
-            {/* <div className="nextPrev">
-              <i>👈 Previous Page |</i>
-              <i> Next Page 👉</i>
-            </div> */}
           </div> 
 
               :
