@@ -126,7 +126,7 @@ button p {
 }
 
 .movie-card {
-  padding: 0 .75em 1em .75em;
+  padding: 1.75em .75em 1em .75em;
   display: inline-flex;
   flex-direction: column;
   max-width: 12.5em;

@@ -28,7 +28,6 @@ function MovieContainer({movie}) {
             <img src="../error.png" alt="" style={{height: 150, marginTop: 40}}/>
           </div>
         }
-
     </div>
   )
 }
