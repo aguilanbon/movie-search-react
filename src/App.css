@@ -53,7 +53,7 @@ a {
 
 input {
   min-height: 2em;
-  border-radius: .5em 0   0 .5em;
+  border-radius: .5em 0 0 .5em;
   border: 0;
   padding-left: 1em;
 }
@@ -98,6 +98,7 @@ button p {
   color: #079a69;
   background-color: #110;
   cursor: pointer;
+  font-size: .7rem;
 }
 
 .btn:hover {
@@ -120,7 +121,7 @@ button p {
 
 .movie-card-container {
   text-align: center;
-  width: 70%;
+  width: 80%;
   margin: 1em auto;
   height: auto;
 }
@@ -128,13 +129,13 @@ button p {
 .movie-card {
   margin: 0 auto;
   display: inline-flex;
-  flex-direction: column  ;
+  flex-direction: column;
   margin: 10px;
-  max-width: 200px;
-  max-height: 300px;
+  max-width: 12.5em;
+  min-height: 30vh;
   color: white;
   font-size: .8em;
-  padding-bottom: 5em;
+  padding-bottom: 1em;
   text-align: left;
   cursor: pointer;
 }
@@ -145,8 +146,7 @@ button p {
 
 img {
   margin: 0 auto;
-  max-width: 200px;
-  height: 30vh;
+  max-width: 12.5em;
   border-radius: 1em;
   object-fit: cover;
 }
@@ -175,4 +175,28 @@ img {
 
 .pageFooter {
   margin: 2em 0 4em 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .movie-container {
+    min-width: 90%;
+  }
+}
+
+@media only screen and (max-width: 481px) {
+  .movie-card-container {
+    width: 100%;
+    margin: 1em auto;
+  }
+
+  .movie-card {
+    max-width: 10.5em;
+  }
+
+  img {
+    margin: 0 auto;
+    max-width: 100%;
+    border-radius: 1em;
+    object-fit: cover;
+  }
 }
