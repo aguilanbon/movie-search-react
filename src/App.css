@@ -177,6 +177,11 @@ img {
   margin: 2em 0 4em 0;
 }
 
+.active {
+  background-color: #079a69;
+  color: white;
+}
+
 @media only screen and (max-width: 768px) {
   .movie-container {
     min-width: 90%;

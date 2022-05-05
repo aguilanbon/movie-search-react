@@ -4,9 +4,14 @@ function SearchBar({fetchMovies, searchMovie}) {
 
     const [searchTerm, setsearchTerm] = useState('')
     const [query, setQuery] = useState('')
+    const [activeBtn, setactiveBtn] = useState('')
+
+    const setActiveBtn = (btn) => {
+        setactiveBtn(btn)
+    }
 
     return (
-        <div>
+        <div> 
             <div className="input-container">
                 <input
                     type="text"
@@ -26,9 +31,18 @@ function SearchBar({fetchMovies, searchMovie}) {
                 </button>
             </div>
             <div className="btn-container">
-                <button className='btn' onClick={() => fetchMovies('popular')}>Popular</button>
-                <button className='btn' onClick={() => fetchMovies('top_rated')}>Top Rated</button>
-                <button className='btn' onClick={() => fetchMovies('upcoming')}>Upcoming</button>
+                <button className={activeBtn === 'popular' ? `btn active` : 'btn'} onClick={() => {
+                    fetchMovies('popular')
+                    setActiveBtn('popular')
+                    }}>Popular</button>
+                <button className={activeBtn === 'top_rated' ? `btn active` : 'btn'} onClick={() => {
+                    fetchMovies('top_rated')
+                    setActiveBtn('top_rated')
+                    }}>Top Rated</button>
+                <button className={activeBtn === 'upcoming' ? `btn active` : 'btn'} onClick={() => {
+                    fetchMovies('upcoming')
+                    setActiveBtn('upcoming')
+                    }}>Upcoming</button>
             </div>
             <div className="query-text">
                 {query === '' ? <p></p> : <p>Search results for "{query}"</p>}
