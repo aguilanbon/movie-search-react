@@ -8,7 +8,7 @@ function Header() {
             <span style={{ color: '#16b882' }}>b</span>movies
           </a>
       </h1>
-      <footer>TMDB api search index</footer>
+      <footer>TMDB api - Movie Search</footer>
     </div>
   )
 }

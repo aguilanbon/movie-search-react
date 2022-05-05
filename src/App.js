@@ -8,7 +8,6 @@ function App() {
 
 // 84a074e905a08c91f14ba891ba4e57bc
 
-
 	return (
 		<div className="App">
 			<Header/>

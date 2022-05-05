@@ -12,7 +12,7 @@ function MovieContainer({movie}) {
                     </div>
                     <div className="movie-info">
                         <p id='movie-title'> {mov.title} </p>
-                        <div className="movie-details">
+                      <div className="movie-details">
                         <p> {mov.release_date} </p>
                         <p id='movie-type'> {mov.original_language} </p>
                       </div>
@@ -20,9 +20,8 @@ function MovieContainer({movie}) {
                 </div>
               ))}
           </div> 
-
               :
-              <div className='movie-card-container'>
+          <div className='movie-card-container'>
             <img src="../error.png" alt="" style={{height: 150, marginTop: 40}}/>
           </div>
         }
