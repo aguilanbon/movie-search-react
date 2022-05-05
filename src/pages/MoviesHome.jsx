@@ -13,12 +13,19 @@ function MoviesHome() {
 		setmovie(movieData.results)
 	};
 
+    const searchMovie = async (title) => {
+        const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=84a074e905a08c91f14ba891ba4e57bc&language=en-US&page=1&include_adult=false&query=${title}`)
+        const data = await response.json()
+        const movie = data.results
+        setmovie(movie)
+    }
+
 	useEffect(() => {
 		fetchMovies('popular');
 	}, []);
   return (
     <div>
-        <SearchBar fetchMovies={fetchMovies}/>
+        <SearchBar fetchMovies={fetchMovies} searchMovie={searchMovie}/>
         <MovieContainer movie={movie} />
     </div>
   )
