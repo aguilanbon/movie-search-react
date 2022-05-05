@@ -6,7 +6,7 @@ body {
   height: auto;
   font-size: 16px;
   text-align: center;
-  max-width: 90%;
+  max-width: 85%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -115,27 +115,24 @@ button p {
 
 .movie-container {
   display: flex;
+  flex-direction: column;
   width: auto;
   height: auto;
 }
 
 .movie-card-container {
   text-align: center;
-  width: 80%;
-  margin: 1em auto;
   height: auto;
 }
 
 .movie-card {
-  margin: 0 auto;
+  padding: 0 .75em 1em .75em;
   display: inline-flex;
   flex-direction: column;
-  margin: 10px;
   max-width: 12.5em;
   min-height: 30vh;
   color: white;
   font-size: .8em;
-  padding-bottom: 1em;
   text-align: left;
   cursor: pointer;
 }
@@ -183,6 +180,10 @@ img {
 }
 
 @media only screen and (max-width: 768px) {
+  .movie-card-container {
+    min-width: 90%;
+  }
+
   .movie-container {
     min-width: 90%;
   }

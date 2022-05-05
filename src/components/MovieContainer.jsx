@@ -8,7 +8,7 @@ function MovieContainer({movie}) {
               {movie.map(mov => (
                 <div className="movie-card" key={mov.id}>
                     <div  className="movie-background">
-                      <img src={`https://image.tmdb.org/t/p/w342${mov.poster_path}`} alt="" />
+                      <img src={mov.poster_path === null ? '../../file.png' : `https://image.tmdb.org/t/p/w342${mov.poster_path}`} alt="" />
                     </div>
                     <div className="movie-info">
                         <p id='movie-title'> {mov.title} </p>
@@ -22,6 +22,9 @@ function MovieContainer({movie}) {
           </div> 
               :
           <div className='movie-card-container'>
+            <div className="query-text">
+              No movie found
+            </div>
             <img src="../error.png" alt="" style={{height: 150, marginTop: 40}}/>
           </div>
         }
