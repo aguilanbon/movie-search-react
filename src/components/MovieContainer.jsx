@@ -1,21 +1,20 @@
 import React from 'react'
 
-function MovieContainer({movie, userSearch, searchTerm, searchMovies}) {
+function MovieContainer({movie}) {
   return (
     <div className='movie-container'>
         { movie?.length > 0 ?
           <div className='movie-card-container'>
-          {userSearch && <footer>search results for "{userSearch}"</footer>}
               {movie.map(mov => (
-                <div className="movie-card" key={mov.imdbID}>
+                <div className="movie-card" key={mov.id}>
                     <div  className="movie-background">
-                          <img src={mov.Poster !== 'N/A' ? mov.Poster : `../file.png` } alt="" />
+                      <img src={`https://image.tmdb.org/t/p/w342${mov.poster_path}`} alt="" />
                     </div>
                     <div className="movie-info">
-                        <p id='movie-title'> {mov.Title} </p>
+                        <p id='movie-title'> {mov.title} </p>
                         <div className="movie-details">
-                        <p> {mov.Year} </p>
-                        <p id='movie-type'> {mov.Type} </p>
+                        <p> {mov.release_date} </p>
+                        <p id='movie-type'> {mov.original_language} </p>
                       </div>
                     </div>
                 </div>
@@ -24,7 +23,6 @@ function MovieContainer({movie, userSearch, searchTerm, searchMovies}) {
 
               :
               <div className='movie-card-container'>
-            <h2>No movies found for "{userSearch}"</h2>
             <img src="../error.png" alt="" style={{height: 150, marginTop: 40}}/>
           </div>
         }
