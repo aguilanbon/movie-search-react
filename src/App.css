@@ -105,6 +105,13 @@ button p {
   color: white;
 }
 
+.query-text {
+  color: white;
+  font-size: .85em;
+  opacity: .5;
+  margin-top: 1.25em;
+}
+
 .movie-container {
   display: flex;
   width: auto;
@@ -114,7 +121,7 @@ button p {
 .movie-card-container {
   text-align: center;
   width: 70%;
-  margin: 40px auto;
+  margin: 1em auto;
   height: auto;
 }
 
