@@ -36,14 +36,17 @@ function SearchBar({fetchMovies, searchMovie, discoverMovies}) {
                 <button className={activeBtn === 'popular' ? `btn active` : 'btn'} onClick={() => {
                     fetchMovies('popular')
                     setActiveBtn('popular')
+                    setpageCounter(2)
                     }}>Popular</button>
                 <button className={activeBtn === 'top_rated' ? `btn active` : 'btn'} onClick={() => {
                     fetchMovies('top_rated')
                     setActiveBtn('top_rated')
+                    setpageCounter(2)
                     }}>Top Rated</button>
                 <button className={activeBtn === 'upcoming' ? `btn active` : 'btn'} onClick={() => {
                     fetchMovies('upcoming')
                     setActiveBtn('upcoming')
+                    setpageCounter(2)
                     }}>Upcoming</button>
             </div>
             <div className="query-text">
@@ -62,7 +65,7 @@ function SearchBar({fetchMovies, searchMovie, discoverMovies}) {
             
             :
             <>
-            <button>prev</button>
+            {pageCounter <= 2 ? '' : <button>prev</button>}
             <button onClick={() => {
                 setpageCounter(pageCounter +1)
                 fetchMovies(activeBtn, pageCounter)
