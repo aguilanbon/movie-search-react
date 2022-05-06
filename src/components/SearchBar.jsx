@@ -55,7 +55,7 @@ function SearchBar({fetchMovies, searchMovie, discoverMovies}) {
             
             {activeBtn === '' ? 
             <>
-            <button>prev</button>
+            {discoverPageCounter <= 2 ? '' : <button>prev</button>}
             <button onClick={() => {
                 setdiscoverPageCounter(discoverPageCounter +1)
                 discoverMovies(discoverPageCounter)
