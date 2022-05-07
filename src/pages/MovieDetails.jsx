@@ -39,7 +39,8 @@ function MovieDetails() {
         </div>
       </div>
       <div className="movie-info-container">
-        <h1>{movie.tagline}</h1>
+        <h1>"{movie.tagline}"</h1>
+        <p>. . .</p>
         <p>{movie.overview}</p>
       </div>
     </div>

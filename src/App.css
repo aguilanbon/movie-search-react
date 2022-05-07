@@ -203,7 +203,7 @@ button p {
   color: white;
   border-left: 2px solid #079a69;
   max-width: 48.75em;
-  background-color: rgb(32, 32, 22);
+  background-color: rgb(39, 37, 37);
   border-radius: .5em;
   padding-bottom: 5em;
   margin-bottom: 5em;
@@ -216,20 +216,25 @@ button p {
 
 .right-details {
   text-align: left;
-  margin-left: 1em;
   display: flex;
   flex-direction: row;
   padding-top: 1.5em;
+}
+
+.right-details h3{
+  font-size: 1.8rem;
 }
 
 .right-details-one p {
   display: inline;
   margin: 0 1em 0 0;
   font-size: .8em;
+  opacity: .5;
 }
 
 .right-details-one {
   width: 50%;
+  margin-left: 1em;
 }
 
 .right-details-two {
@@ -247,7 +252,7 @@ button p {
 
 .movie-info-container {
   margin: 0 auto;
-  max-width: 70%;
+  max-width: 60%;
   text-align: center;
   font-size: .9rem;
 }
@@ -257,6 +262,10 @@ button p {
   line-height: 1.4em;
 }
 
+.movie-info-container h1 {
+  font-style: italic;
+  font-size: 1.3rem;
+}
 
 @media only screen and (max-width: 768px) {
   .movie-card-container {
@@ -269,6 +278,7 @@ button p {
 }
 
 @media only screen and (max-width: 481px) {
+
   .movie-card-container {
     width: 100%;
     margin: 1em auto;
@@ -278,7 +288,7 @@ button p {
     max-width: 10.5em;
   }
 
-  img {
+  .poster {
     margin: 0 auto;
     max-width: 100%;
     border-radius: 1em;
@@ -294,4 +304,11 @@ button p {
   .details-container {
     font-size: .8em;
   }
+  .right-details-two {
+  padding-top: .5em;
+  }
+
+  .right-details h3{
+  font-size: 1rem;
+}
 }
