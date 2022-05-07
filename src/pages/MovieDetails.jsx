@@ -14,22 +14,33 @@ function MovieDetails() {
       const data =  await response.json()
       setMovie(data)
       setGenre(data.genres)
-      console.log(movie);
+      console.log(data);
     }
     searchMovie(movId)
-  },[movId, movie])
+  },[movId])
   
 
   return (
     <div className='details-container'>
       <div className="left-details">
-        <img src={movie.poster_path === null ? '../../file.png' : `https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" className='backdrop' />
+        <img src={movie.backdrop_path === null ? '../../file.png' : `https://image.tmdb.org/t/p/w780${movie.backdrop_path}`} alt="" className='backdrop' />
       </div>
       <div className="right-details">
-        <h3>{movie.title}</h3>
-        {genre.map(gen => (
-          <p key={gen.id}>{gen.name}</p>
-        ))}
+        <div className="right-details-one">
+          <h3>{movie.title}</h3>
+          {genre.map(gen => (
+            <p key={gen.id}>{gen.name}</p>
+          ))}
+        </div>
+        <div className="right-details-two">
+          <p>Rating: {movie.vote_average} ⭐</p>
+          <p>Release Date: {movie.release_date} </p>
+          <footer>{movie.original_language} | {movie.runtime} mins</footer>
+        </div>
+      </div>
+      <div className="movie-info-container">
+        <h1>{movie.tagline}</h1>
+        <p>{movie.overview}</p>
       </div>
     </div>
   )
