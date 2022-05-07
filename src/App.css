@@ -311,4 +311,9 @@ button p {
   .right-details h3{
   font-size: 1rem;
 }
+
+.movie-info-container h1 {
+  font-style: italic;
+  font-size: .8rem;
+}
 }
