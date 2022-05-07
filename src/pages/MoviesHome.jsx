@@ -29,14 +29,14 @@ function MoviesHome() {
   }
 
 	useEffect(() => {
-		discoverMovies()
+		discoverMovies(1)
 	}, []);
 
   return (
     <div>
       <SearchBar fetchMovies={fetchMovies} searchMovie={searchMovie} discoverMovies={discoverMovies}/>
       <MovieContainer movie={movie} />
-      <Footer discoverMovies={discoverMovies}/>
+      <Footer />
     </div>
   )
 }

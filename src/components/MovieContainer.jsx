@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function MovieContainer({movie}) {
   return (
@@ -6,9 +7,10 @@ function MovieContainer({movie}) {
         { movie?.length > 0 ?
           <div className='movie-card-container'>
               {movie.map(mov => (
+            <Link to={`/movie-details/${mov.id}`} key={mov.id}>
                 <div className="movie-card" key={mov.id}>
                     <div  className="movie-background">
-                      <img src={mov.poster_path === null ? '../../file.png' : `https://image.tmdb.org/t/p/w342${mov.poster_path}`} alt="" />
+                      <img src={mov.poster_path === null ? '../../file.png' : `https://image.tmdb.org/t/p/w342${mov.poster_path}`} alt="" className='poster' />
                     </div>
                     <div className="movie-info">
                         <p id='movie-title'> {mov.title} </p>
@@ -18,8 +20,9 @@ function MovieContainer({movie}) {
                       </div>
                     </div>
                 </div>
+            </Link> 
               ))}
-          </div> 
+          </div>
               :
           <div className='movie-card-container'>
             <div className="query-text">

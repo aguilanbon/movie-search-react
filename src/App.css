@@ -141,7 +141,7 @@ button p {
   opacity: 0.7;
 }
 
-img {
+.poster {
   margin: 0 auto;
   max-width: 12.5em;
   border-radius: 1em;
@@ -177,6 +177,35 @@ img {
 .active {
   background-color: #079a69;
   color: white;
+}
+
+.prevNext {
+  border: 0;
+  background-color: #110;
+  color: white;
+  padding: .5em 1em;
+  font-size: .75em;
+  cursor: pointer;
+}
+
+.prevNext:hover {
+  color: #079a69;
+  border-bottom: 1px solid #079a69;
+}
+
+.btn-img {
+  height: 1.4rem;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.backdrop {
+  border-radius: 1em;
+  object-fit: cover;
 }
 
 @media only screen and (max-width: 768px) {

@@ -55,9 +55,10 @@ function SearchBar({fetchMovies, searchMovie, discoverMovies}) {
             
             {activeBtn === '' ? 
             <>
-            {discoverPageCounter <= 2 ? '' : <button>prev</button>}
-            <button onClick={() => {
-                setdiscoverPageCounter(discoverPageCounter +1)
+            {discoverPageCounter <= 1 ? '' : 
+            <button className='prevNext'>prev</button>}
+            <button className='prevNext' onClick={() => {
+                setdiscoverPageCounter(discoverPageCounter + 1)
                 discoverMovies(discoverPageCounter)
                 }}>next</button>
             </>
@@ -65,8 +66,9 @@ function SearchBar({fetchMovies, searchMovie, discoverMovies}) {
             
             :
             <>
-            {pageCounter <= 2 ? '' : <button>prev</button>}
-            <button onClick={() => {
+            {pageCounter <= 2 ? '' : 
+            <button className='prevNext'>prev</button>}
+            <button className='prevNext' onClick={() => {
                 setpageCounter(pageCounter +1)
                 fetchMovies(activeBtn, pageCounter)
                 }}>next</button>
