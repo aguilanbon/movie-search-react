@@ -4,15 +4,15 @@ import {motion} from 'framer-motion'
 
 function MovieContainer({movie}) {
   return (
-    <motion.div animate={{y: [-50, 0]}} className='movie-container'>
+    <div className='movie-container'>
         { movie?.length > 0 ?
           <div className='movie-card-container'>
               {movie.map(mov => (
             <Link to={`/movie-details/${mov.id}`} key={mov.id}>
                 <motion.div layout className="movie-card" key={mov.id}>
-                    <div  className="movie-background">
+                    <motion.div animate={{y: [-25, 0]}}  className="movie-background">
                       <img src={mov.poster_path === null ? '../../file.png' : `https://image.tmdb.org/t/p/w342${mov.poster_path}`} alt="" className='poster' />
-                    </div>
+                    </motion.div>
                     <motion.div animate={{y: [50, 0]}} className="movie-info">
                         <p id='movie-title'> {mov.title} </p>
                       <div className="movie-details">
@@ -32,7 +32,7 @@ function MovieContainer({movie}) {
             <img src="../error.png" alt="" style={{height: 150, marginTop: 40}}/>
           </div>
         }
-    </motion.div>
+    </div>
   )
 }
 
