@@ -1,25 +1,26 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import {motion} from 'framer-motion'
 
 function MovieContainer({movie}) {
   return (
-    <div className='movie-container'>
+    <motion.div animate={{y: [-50, 0]}} className='movie-container'>
         { movie?.length > 0 ?
           <div className='movie-card-container'>
               {movie.map(mov => (
             <Link to={`/movie-details/${mov.id}`} key={mov.id}>
-                <div className="movie-card" key={mov.id}>
+                <motion.div layout className="movie-card" key={mov.id}>
                     <div  className="movie-background">
                       <img src={mov.poster_path === null ? '../../file.png' : `https://image.tmdb.org/t/p/w342${mov.poster_path}`} alt="" className='poster' />
                     </div>
-                    <div className="movie-info">
+                    <motion.div animate={{y: [50, 0]}} className="movie-info">
                         <p id='movie-title'> {mov.title} </p>
                       <div className="movie-details">
                         <p> {mov.release_date} </p>
                         <p id='movie-type'> {mov.original_language} </p>
                       </div>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             </Link> 
               ))}
           </div>
@@ -31,7 +32,7 @@ function MovieContainer({movie}) {
             <img src="../error.png" alt="" style={{height: 150, marginTop: 40}}/>
           </div>
         }
-    </div>
+    </motion.div>
   )
 }
 

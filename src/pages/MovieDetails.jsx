@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import {motion} from 'framer-motion'
 
 function MovieDetails() {
   let params = useParams()
@@ -20,7 +21,7 @@ function MovieDetails() {
   
 
   return (
-    <div className='details-container'>
+    <motion.div animate={{x:[-150, 0]}} className='details-container'>
       <div className="left-details">
         <img src={movie.backdrop_path === null ? '../../file.png' : `https://image.tmdb.org/t/p/w780${movie.backdrop_path}`} alt="" className='backdrop' />
       </div>
@@ -42,7 +43,7 @@ function MovieDetails() {
         <p>. . .</p>
         <p>{movie.overview}</p>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
