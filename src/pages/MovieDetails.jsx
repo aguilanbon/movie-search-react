@@ -14,7 +14,6 @@ function MovieDetails() {
       const data =  await response.json()
       setMovie(data)
       setGenre(data.genres)
-      console.log(data);
     }
     searchMovie(movId)
   },[movId])
