@@ -5,8 +5,8 @@ function SearchBar({fetchMovies, searchMovie, discoverMovies}) {
     const [searchTerm, setsearchTerm] = useState('')
     const [query, setQuery] = useState('')
     const [activeBtn, setactiveBtn] = useState('')
-    // const [discoverPageCounter, setdiscoverPageCounter] = useState(1)
-    // const [pageCounter, setpageCounter] = useState(2)
+    const [discoverPageCounter, setdiscoverPageCounter] = useState(1)
+    const [pageCounter, setpageCounter] = useState(2)
 
     const setActiveBtn = (btn) => {
         setactiveBtn(btn)
@@ -53,7 +53,7 @@ function SearchBar({fetchMovies, searchMovie, discoverMovies}) {
                 {query === '' ? <p></p> : <p>Search results for "{query}"</p>}
             </div>
             
-            {/* {activeBtn === '' ? 
+            {activeBtn === '' ? 
             <>
             {discoverPageCounter <= 1 ? '' : 
             <button className='prevNext' onClick={() => {
@@ -76,7 +76,7 @@ function SearchBar({fetchMovies, searchMovie, discoverMovies}) {
                 fetchMovies(activeBtn, pageCounter)
                 }}>next</button>
             </>
-            } */}
+            }
     </div>
     )
 }
