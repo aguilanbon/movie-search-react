@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function Header() {
+function Header({discoverMovies}) {
   return (
     <div>
-      <h1>
+      <h1 onClick={discoverMovies}>
           <Link to="/">
             <span style={{ color: '#16b882' }}>b</span>movies
           </Link>
