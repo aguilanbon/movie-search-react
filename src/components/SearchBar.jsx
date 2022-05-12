@@ -1,17 +1,17 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 
 function SearchBar({fetchMovies, searchMovie, discoverMovies}) {
 
     const [searchTerm, setsearchTerm] = useState('')
     const [query, setQuery] = useState('')
     const [activeBtn, setactiveBtn] = useState('')
-    const [discoverPageCounter, setdiscoverPageCounter] = useState(1)
+    const [discoverPageCounter, setdiscoverPageCounter] = useState(2)
     const [pageCounter, setpageCounter] = useState(2)
 
     const setActiveBtn = (btn) => {
         setactiveBtn(btn)
     }
-
+    
     return (
         <div> 
             <div className="input-container">
@@ -54,28 +54,27 @@ function SearchBar({fetchMovies, searchMovie, discoverMovies}) {
             </div>
             
             {activeBtn === '' ? 
-            <>
-            {discoverPageCounter <= 1 ? '' : 
-            <button className='prevNext' onClick={() => {
-                setdiscoverPageCounter(discoverPageCounter - 1)
-                discoverMovies(discoverPageCounter)
-                }}>prev</button>}
-            <button className='prevNext' onClick={() => {
-                setdiscoverPageCounter(discoverPageCounter + 1)
-                discoverMovies(discoverPageCounter)
-                }}>next</button>
-            </>
-                    
-            
+                // <>
+                //     {discoverPageCounter <= 1 ? '' : 
+                //     <button className='prevNext' onClick={() => {
+                //         setdiscoverPageCounter(discoverPageCounter - 1)
+                //         console.log(discoverPageCounter);
+                //         discoverMovies(discoverPageCounter)
+                //         }}>prev</button> }
+                    <button className='prevNext' onClick={() => {
+                        setdiscoverPageCounter(discoverPageCounter + 1)
+                        discoverMovies(discoverPageCounter)
+                        }}>next</button>
+                // </>
             :
-            <>
-            {pageCounter <= 2 ? '' : 
-            <button className='prevNext'>prev</button>}
-            <button className='prevNext' onClick={() => {
-                setpageCounter(pageCounter +1)
-                fetchMovies(activeBtn, pageCounter)
-                }}>next</button>
-            </>
+                // <>
+                //     {pageCounter <= 2 ? '' : 
+                //     <button className='prevNext'>prev</button>}
+                    <button className='prevNext' onClick={() => {
+                        setpageCounter(pageCounter +1)
+                        fetchMovies(activeBtn, pageCounter)
+                    }}>next</button>
+                // </>
             }
     </div>
     )

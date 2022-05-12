@@ -10,6 +10,7 @@ function MoviesHome() {
   const discoverMovies = async (page) => {
     const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=84a074e905a08c91f14ba891ba4e57bc&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate&page=${page}`)
 		const movieData = await response.json()
+    console.log(movieData);
 		setmovie(movieData.results)
   }
 
@@ -27,7 +28,7 @@ function MoviesHome() {
   }
 
 	useEffect(() => {
-		discoverMovies(1)
+		discoverMovies()
 	}, []);
 
   return (
