@@ -28,7 +28,7 @@ function MoviesHome() {
   }
 
 	useEffect(() => {
-		discoverMovies()
+		discoverMovies(1)
 	}, []);
 
   return (
