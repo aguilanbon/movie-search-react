@@ -14,18 +14,32 @@ function SearchBar({fetchMovies, searchMovie, discoverMovies}) {
 
     const nextBtn = () => {
         setdiscoverPageCounter(prevCount => prevCount + 1)
-        discoverMovies(discoverPageCounter)
     }
 
     const prevBtn = () => {
         setdiscoverPageCounter(prevCount => prevCount - 1)
-        discoverMovies(discoverPageCounter)
+    }
+
+    const nextBtnActive = () => {
+        setpageCounter(prevCount => prevCount + 1)
+    }
+
+    const prevBtnActive = () => {
+        setpageCounter(prevCount => prevCount - 1)
     }
 
     useEffect(() => {
-        discoverMovies(discoverPageCounter)
-    }, [discoverPageCounter])  
+        if(activeBtn === '') {
+            discoverMovies(discoverPageCounter)
+        }
+        if(activeBtn === 'popular' || activeBtn === 'top_rated' || activeBtn === 'upcoming') {
+            fetchMovies(activeBtn, pageCounter)
+        }
+
+    }, [discoverPageCounter, pageCounter])  
+
     
+
     return (
         <div> 
             <div className="input-container">
@@ -48,16 +62,19 @@ function SearchBar({fetchMovies, searchMovie, discoverMovies}) {
             </div>
             <div className="btn-container">
                 <button className={activeBtn === 'popular' ? `btn active` : 'btn'} onClick={() => {
-                    fetchMovies('popular')
                     setActiveBtn('popular')
+                    fetchMovies('popular')
+                    setpageCounter(1)
                     }}>Popular</button>
                 <button className={activeBtn === 'top_rated' ? `btn active` : 'btn'} onClick={() => {
-                    fetchMovies('top_rated')
                     setActiveBtn('top_rated')
+                    fetchMovies('top_rated')
+                    setpageCounter(1)
                     }}>Top Rated</button>
                 <button className={activeBtn === 'upcoming' ? `btn active` : 'btn'} onClick={() => {
-                    fetchMovies('upcoming')
                     setActiveBtn('upcoming')
+                    fetchMovies('upcoming')
+                    setpageCounter(1)
                     }}>Upcoming</button>
             </div>
             <div className="query-text">
@@ -67,19 +84,16 @@ function SearchBar({fetchMovies, searchMovie, discoverMovies}) {
             {activeBtn === '' ? 
                 <>
                     {discoverPageCounter <= 1 ? '' : 
-                    <button className='prevNext' onClick={prevBtn}>prev</button>}
+                        <button className='prevNext' onClick={prevBtn}>prev</button>
+                    }
                     <button className='prevNext' onClick={nextBtn}>next</button>
                 </>
             :
                 <>
-                    <button className='prevNext' onClick={() => {
-                        setpageCounter(prevCount => prevCount + 1)
-                        fetchMovies(activeBtn, pageCounter)
-                    }}>prev</button>
-                    <button className='prevNext' onClick={() => {
-                        setpageCounter(prevCount => prevCount + 1)
-                        fetchMovies(activeBtn, pageCounter)
-                    }}>next</button>
+                    {pageCounter <= 1 ? '' : 
+                        <button className='prevNext' onClick={prevBtnActive}>prev</button>
+                    }
+                    <button className='prevNext' onClick={nextBtnActive}>next</button>
                 </>
             }
     </div>
