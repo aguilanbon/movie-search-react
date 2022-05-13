@@ -11,7 +11,7 @@ function MovieContainer({movie}) {
             <Link to={`/movie-details/${mov.id}`} key={mov.id}>
                 <motion.div layout className="movie-card" key={mov.id}>
                     <motion.div animate={{y: [-25, 0]}}  className="movie-background">
-                      <img src={mov.poster_path === null ? '../../file.png' : `https://image.tmdb.org/t/p/w342${mov.poster_path}`} alt="" className='poster' />
+                      <img loading='lazy' src={mov.poster_path === null ? '../../file.png' : `https://image.tmdb.org/t/p/w342${mov.poster_path}`} alt="" className='poster' />
                     </motion.div>
                     <motion.div animate={{y: [50, 0]}} className="movie-info">
                         <p id='movie-title'> {mov.title} </p>
