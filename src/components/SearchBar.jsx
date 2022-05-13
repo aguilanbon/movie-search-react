@@ -11,6 +11,20 @@ function SearchBar({fetchMovies, searchMovie, discoverMovies}) {
     const setActiveBtn = (btn) => {
         setactiveBtn(btn)
     }
+
+    const nextBtn = () => {
+        setdiscoverPageCounter(prevCount => prevCount + 1)
+        discoverMovies(discoverPageCounter)
+    }
+
+    // const prevBtn = () => {
+    //     setdiscoverPageCounter(prevCount => prevCount - 1)
+    //     discoverMovies(discoverPageCounter)
+    // }
+
+
+    useEffect(() => {
+    }, [])  
     
     return (
         <div> 
@@ -52,20 +66,16 @@ function SearchBar({fetchMovies, searchMovie, discoverMovies}) {
             
             {activeBtn === '' ? 
                 <>
+                    <button className='prevNext'>prev</button>
                     <button className='prevNext' onClick={() => {
-                        setdiscoverPageCounter(discoverPageCounter - 1)
-                        discoverMovies(discoverPageCounter)
-                        }}>prev</button> 
-                    <button className='prevNext' onClick={() => {
-                        setdiscoverPageCounter(discoverPageCounter + 1)
-                        discoverMovies(discoverPageCounter)
+                        nextBtn()
                         }}>next</button>
                 </>
             :
                 <>
                     <button className='prevNext'>prev</button>
                     <button className='prevNext' onClick={() => {
-                        setpageCounter(pageCounter +1)
+                        setpageCounter(prevCount => prevCount + 1)
                         fetchMovies(activeBtn, pageCounter)
                     }}>next</button>
                 </>
