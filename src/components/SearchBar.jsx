@@ -38,8 +38,6 @@ function SearchBar({fetchMovies, searchMovie, discoverMovies}) {
 
     }, [discoverPageCounter, pageCounter])  
 
-    
-
     return (
         <div> 
             <div className="input-container">
