@@ -12,6 +12,7 @@ function App() {
 	return (
 		<div className="App">
 			<BrowserRouter>
+			<Header />
 				<Routes>
 					<Route path='/' element={<MoviesHome />} />
 					<Route path='/movie-details/:movieId' element={<MovieDetails />} />

@@ -36,17 +36,14 @@ function SearchBar({fetchMovies, searchMovie, discoverMovies}) {
                 <button className={activeBtn === 'popular' ? `btn active` : 'btn'} onClick={() => {
                     fetchMovies('popular')
                     setActiveBtn('popular')
-                    // setpageCounter(2)
                     }}>Popular</button>
                 <button className={activeBtn === 'top_rated' ? `btn active` : 'btn'} onClick={() => {
                     fetchMovies('top_rated')
                     setActiveBtn('top_rated')
-                    // setpageCounter(2)
                     }}>Top Rated</button>
                 <button className={activeBtn === 'upcoming' ? `btn active` : 'btn'} onClick={() => {
                     fetchMovies('upcoming')
                     setActiveBtn('upcoming')
-                    // setpageCounter(2)
                     }}>Upcoming</button>
             </div>
             <div className="query-text">
@@ -54,27 +51,24 @@ function SearchBar({fetchMovies, searchMovie, discoverMovies}) {
             </div>
             
             {activeBtn === '' ? 
-                // <>
-                //     {discoverPageCounter <= 1 ? '' : 
-                //     <button className='prevNext' onClick={() => {
-                //         setdiscoverPageCounter(discoverPageCounter - 1)
-                //         console.log(discoverPageCounter);
-                //         discoverMovies(discoverPageCounter)
-                //         }}>prev</button> }
+                <>
+                    <button className='prevNext' onClick={() => {
+                        setdiscoverPageCounter(discoverPageCounter - 1)
+                        discoverMovies(discoverPageCounter)
+                        }}>prev</button> 
                     <button className='prevNext' onClick={() => {
                         setdiscoverPageCounter(discoverPageCounter + 1)
                         discoverMovies(discoverPageCounter)
                         }}>next</button>
-                // </>
+                </>
             :
-                // <>
-                //     {pageCounter <= 2 ? '' : 
-                //     <button className='prevNext'>prev</button>}
+                <>
+                    <button className='prevNext'>prev</button>
                     <button className='prevNext' onClick={() => {
                         setpageCounter(pageCounter +1)
                         fetchMovies(activeBtn, pageCounter)
                     }}>next</button>
-                // </>
+                </>
             }
     </div>
     )
