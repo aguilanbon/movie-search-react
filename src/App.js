@@ -14,7 +14,7 @@ function App() {
 			<BrowserRouter>
 			<Header />
 				<Routes>
-					<Route path='/movie-search-react' element={<MoviesHome />} />
+					<Route path='/' element={<MoviesHome />} />
 					<Route path='/movie-details/:movieId' element={<MovieDetails />} />
 				</Routes>
 			</BrowserRouter>
