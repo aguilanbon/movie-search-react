@@ -5,7 +5,7 @@ function Header() {
   return (
     <div>
       <h1>
-          <Link to="/">
+          <Link to="/movie-search-react">
             <span style={{ color: '#16b882' }}>b</span>movies
           </Link>
       </h1>
