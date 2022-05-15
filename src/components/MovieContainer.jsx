@@ -11,7 +11,7 @@ function MovieContainer({movie}) {
             <Link to={`/movie-details/${mov.id}`} key={mov.id}>
                 <motion.div layout className="movie-card" key={mov.id}>
                     <motion.div animate={{y: [-25, 0]}}  className="movie-background">
-                      <img loading='lazy' src={mov.poster_path === null ? '../../file.png' : `https://image.tmdb.org/t/p/w342${mov.poster_path}`} alt="" className='poster' />
+                      <img loading='lazy' src={mov.poster_path === null ? 'https://i.ibb.co/vwsz1SP/file.png' : `https://image.tmdb.org/t/p/w342${mov.poster_path}`} alt="" className='poster' />
                     </motion.div>
                     <motion.div animate={{y: [50, 0]}} className="movie-info">
                         <p id='movie-title'> {mov.title} </p>
@@ -29,7 +29,7 @@ function MovieContainer({movie}) {
             <div className="query-text">
               No movie found
             </div>
-            <img src="../error.png" alt="" style={{height: 150, marginTop: 40}}/>
+            <img src="https://i.ibb.co/8jdRyHL/error.png" alt="" style={{height: 150, marginTop: 40}}/>
           </div>
         }
     </div>
