@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 
-function SearchBar({fetchMovies, searchMovie, discoverMovies}) {
+function SearchBar({fetchMovies, searchMovie, discoverMovies, movie}) {
 
     const [searchTerm, setsearchTerm] = useState('')
     const [query, setQuery] = useState('')
@@ -87,14 +87,15 @@ function SearchBar({fetchMovies, searchMovie, discoverMovies}) {
                     {discoverPageCounter <= 1 ? '' : 
                         <button className='prevNext' onClick={prevBtn}>prev</button>
                     }
-                    <button className='prevNext' onClick={nextBtn}>next</button>
+                    {movie?.length > 0 ? <button className='prevNext' onClick={nextBtn}>next</button> : ''}
+                    
                 </>
             :
                 <>
                     {pageCounter <= 1 ? '' : 
                         <button className='prevNext' onClick={prevBtnActive}>prev</button>
                     }
-                    <button className='prevNext' onClick={nextBtnActive}>next</button>
+                    {movie?.length > 0 ? <button className='prevNext' onClick={nextBtnActive}>next</button> : ''}
                 </>
             }
     </div>

@@ -32,7 +32,7 @@ function MoviesHome() {
 
   return (
     <div>
-      <SearchBar fetchMovies={fetchMovies} searchMovie={searchMovie} discoverMovies={discoverMovies}/>
+      <SearchBar fetchMovies={fetchMovies} searchMovie={searchMovie} discoverMovies={discoverMovies} movie={movie}/>
       <MovieContainer movie={movie} />
       <Footer />
     </div>
