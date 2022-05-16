@@ -81,22 +81,23 @@ function SearchBar({fetchMovies, searchMovie, discoverMovies, movie}) {
             <div className="query-text">
                 {query === '' ? <p></p> : <p>Search results for "{query}"</p>}
             </div>
-            
-            {activeBtn === '' ? 
-                <>
-                    {discoverPageCounter <= 1 ? '' : 
-                        <button className='prevNext' onClick={prevBtn}>prev</button>
-                    }
-                    {movie?.length > 0 ? <button className='prevNext' onClick={nextBtn}>next</button> : ''}
-                    
-                </>
-            :
-                <>
-                    {pageCounter <= 1 ? '' : 
-                        <button className='prevNext' onClick={prevBtnActive}>prev</button>
-                    }
-                    {movie?.length > 0 ? <button className='prevNext' onClick={nextBtnActive}>next</button> : ''}
-                </>
+            {query !== '' ? '' :
+                activeBtn === '' ? 
+                    <>
+                        {discoverPageCounter <= 1 ? '' : 
+                            <button className='prevNext' onClick={prevBtn}>prev</button>
+                        }
+                        {movie?.length > 0 ? <button className='prevNext' onClick={nextBtn}>next</button> : ''}
+                        
+                    </>
+                :
+                    <>
+                        {pageCounter <= 1 ? '' : 
+                            <button className='prevNext' onClick={prevBtnActive}>prev</button>
+                        }
+                        {movie?.length > 0 ? <button className='prevNext' onClick={nextBtnActive}>next</button> : ''}
+                    </>
+                
             }
     </div>
     )
