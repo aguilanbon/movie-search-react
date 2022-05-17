@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import MoviesHome from './pages/MoviesHome';
 import MovieDetails from './pages/MovieDetails'
 
@@ -17,6 +18,7 @@ function App() {
 					<Route path='/movie-search-react' element={<MoviesHome />} />
 					<Route path='/movie-details/:movieId' element={<MovieDetails />} />
 				</Routes>
+			<Footer />
 			</BrowserRouter>
 		</div>
 	);

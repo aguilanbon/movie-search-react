@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import Footer from '../components/Footer';
 import MovieContainer from '../components/MovieContainer';
 import SearchBar from '../components/SearchBar';
 
@@ -34,7 +33,6 @@ function MoviesHome() {
     <div>
       <SearchBar fetchMovies={fetchMovies} searchMovie={searchMovie} discoverMovies={discoverMovies} movie={movie}/>
       <MovieContainer movie={movie} />
-      <Footer />
     </div>
   )
 }
