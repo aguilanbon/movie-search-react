@@ -64,6 +64,8 @@ a {
   text-align: left;
   font-size: .65rem;
   display: block;
+  padding-bottom: 2em;
+  border-radius: 0 0 5px 5px;
 }
 
 .set-border {
@@ -72,6 +74,7 @@ a {
 
 .suggestions p {
   padding: .3em 1.2em;
+  opacity: .85;
 }
 
 .suggestions p:hover {
