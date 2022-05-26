@@ -129,21 +129,21 @@ function SearchBar({ fetchMovies, searchMovie, discoverMovies }) {
             <div className="query-text">
                 {query === '' ? <p></p> : <p>Search results for "{query}"</p>}
             </div>
-
-            {activeBtn === '' ?
-                <>
-                    {discoverPageCounter <= 1 ? '' :
-                        <button className='prevNext' onClick={() => setdiscoverPageCounter(prevCount => prevCount - 1)}>prev</button>
-                    }
-                    <button className='prevNext' onClick={() => setdiscoverPageCounter(prevCount => prevCount + 1)}>next</button>
-                </>
-                :
-                <>
-                    {pageCounter <= 1 ? '' :
-                        <button className='prevNext' onClick={() => setpageCounter(prevCount => prevCount - 1)}>prev</button>
-                    }
-                    <button className='prevNext' onClick={() => setpageCounter(prevCount => prevCount + 1)}>next</button>
-                </>
+            {query !== '' ? '' :
+                activeBtn === '' ?
+                    <>
+                        {discoverPageCounter <= 1 ? '' :
+                            <button className='prevNext' onClick={() => setdiscoverPageCounter(prevCount => prevCount - 1)}>prev</button>
+                        }
+                        <button className='prevNext' onClick={() => setdiscoverPageCounter(prevCount => prevCount + 1)}>next</button>
+                    </>
+                    :
+                    <>
+                        {pageCounter <= 1 ? '' :
+                            <button className='prevNext' onClick={() => setpageCounter(prevCount => prevCount - 1)}>prev</button>
+                        }
+                        <button className='prevNext' onClick={() => setpageCounter(prevCount => prevCount + 1)}>next</button>
+                    </>
             }
         </div>
     )
