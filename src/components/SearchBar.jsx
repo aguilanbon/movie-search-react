@@ -86,7 +86,7 @@ function SearchBar({ fetchMovies, searchMovie, discoverMovies }) {
                         }}
                     />
                     <div ref={menuRef} className={suggestionsState === 'hidden' ? `search-suggestions hidden` : 'search-suggestions'}>
-                        {suggestedMovies.map(movies => (
+                        {suggestedMovies.slice(0, 10).map(movies => (
                             <p key={movies.id}>{movies.title}</p>
                         ))}
                     </div>
