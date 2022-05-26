@@ -16,12 +16,18 @@ function SearchBar({ fetchMovies, searchMovie, discoverMovies }) {
     }
 
     const fetchSearchSuggestions = async (title) => {
-        const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=84a074e905a08c91f14ba891ba4e57bc&language=en-US&page=1&include_adult=false&query=${title}`)
+        const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=84a074e905a08c91f14ba891ba4e57bc&language=en-US&page=1&include_adult=false&query=${title}&total_results=5`)
         const data = await response.json()
-        console.log(data);
+        setSuggestedMovies(data.results)
+
+        suggestedMovies.map(mov => {
+            if (mov.length < 8) {
+                console.log(mov);
+            }
+        })
     }
 
-    const sugFunction = (searchValue) => {
+    const handleSuggestions = (searchValue) => {
         setSearchBorder('set-border')
         setsearchTerm(searchValue)
 
@@ -76,14 +82,13 @@ function SearchBar({ fetchMovies, searchMovie, discoverMovies }) {
                         placeholder="type movie title"
                         value={searchTerm}
                         onChange={(e) => {
-                            sugFunction(e.target.value)
+                            handleSuggestions(e.target.value)
                         }}
                     />
                     <div ref={menuRef} className={suggestionsState === 'hidden' ? `search-suggestions hidden` : 'search-suggestions'}>
-                        <p>batman</p>
-                        <p>spiderman</p>
-                        <p>superman</p>
-                        <p>the flash</p>
+                        {suggestedMovies.map(movies => (
+                            <p key={movies.id}>{movies.title}</p>
+                        ))}
                     </div>
                 </div>
                 <button className={searchBorder === 'set-border' ? 'set-border' : ''} id='search-btn' onClick={() => {

@@ -47,24 +47,26 @@ a {
   text-align: center;
   align-items: center;
   justify-content: center;
-  max-width: 30%;
+  max-width: 20%;
   max-height: 1em;
   position: relative;
+}
+
+
+.suggestions {
+  position: relative;
+  width: fit-content;
 }
 
 .search-suggestions {
   position: absolute;
   z-index: 999;
-  height: 250px;
-  min-width: 100%;
+  height: auto;
+  width: auto;
   background-color:white;
   text-align: left;
-  font-size: .7rem;
+  font-size: .65rem;
   display: block;
-}
-
-.suggestions {
-  width: 100%;
 }
 
 .set-border {
@@ -72,7 +74,7 @@ a {
 }
 
 .suggestions p {
-  padding: .3em 1em;
+  padding: .3em 1.2em;
 }
 
 .suggestions p:hover {
@@ -353,5 +355,10 @@ button p {
 .movie-info-container h1 {
   font-style: italic;
   font-size: .8rem;
+}
+
+.suggestions p {
+  padding: .3em 2em;
+  font-size: .5rem;
 }
 }
