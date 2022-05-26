@@ -47,8 +47,41 @@ a {
   text-align: center;
   align-items: center;
   justify-content: center;
-  max-width: 25%;
+  max-width: 30%;
   max-height: 1em;
+  position: relative;
+}
+
+.search-suggestions {
+  position: absolute;
+  z-index: 999;
+  height: 250px;
+  min-width: 100%;
+  background-color:white;
+  text-align: left;
+  font-size: .7rem;
+  display: block;
+}
+
+.suggestions {
+  width: 100%;
+}
+
+.set-border {
+  border-radius: 5px 0 0 0;
+}
+
+.suggestions p {
+  padding: .3em 1em;
+}
+
+.suggestions p:hover {
+  cursor: pointer;
+  background-color: rgba(182, 179, 179, 0.3)
+}
+
+.hidden {
+  display: none;
 }
 
 input {
