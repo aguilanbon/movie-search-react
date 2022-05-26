@@ -29,7 +29,7 @@ function MovieContainer({ movie }) {
           <div className="query-text">
             No movie found
           </div>
-          <img src="../error.png" alt="" style={{ height: 150, marginTop: 40 }} />
+          <img src="https://i.ibb.co/8jdRyHL/error.png" alt="" style={{ height: 150, marginTop: 40 }} />
         </div>
       }
     </div>
