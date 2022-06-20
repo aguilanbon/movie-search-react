@@ -91,6 +91,9 @@ function SearchBar({ fetchMovies, searchMovie, discoverMovies }) {
                                 searchMovie(movies.title)
                                 setSuggestionsState('hidden')
                                 setSearchBorder('')
+                                setQuery(movies.title)
+                                setSearchBorder('')
+                                setsearchTerm('')
                             }} key={movies.id}>{movies.title}</p>
                         ))}
                     </div>
