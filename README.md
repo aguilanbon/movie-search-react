@@ -1,6 +1,9 @@
 A simple movie search API
 using TMDB API
 
+## DEMO
+github pages: https://aguilanbon.github.io/movie-search-react/
+
 ### `What I learned here`
 
 React UseState  
