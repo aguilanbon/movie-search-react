@@ -1,6 +1,13 @@
 A simple movie search API
 using TMDB API
 
+### `What I learned here`
+
+React UseState  
+React UseEffect  
+React Router
+API's  
+
 ### `npm install`
 
 Installs node dependencies
