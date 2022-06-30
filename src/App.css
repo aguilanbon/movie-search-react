@@ -318,14 +318,13 @@ button p {
 }
 
 @media only screen and (max-width: 481px) {
-
   .movie-card-container {
     width: 100%;
     margin: 1em auto;
   }
 
   .movie-card {
-    max-width: 10.5em;
+    max-width: 12em;
   }
 
   .poster {
@@ -361,4 +360,10 @@ button p {
   padding: .3em 2em;
   font-size: .5rem;
 }
+}
+
+@media only screen and (max-width: 424px) {
+  .movie-card {
+    max-width: 9em;
+  }
 }
