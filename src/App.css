@@ -92,6 +92,7 @@ input {
   border: 0;
   padding-left: 1em;
   width: 35vw;
+  height: 2rem;
 }
 
 input:focus {
@@ -104,7 +105,7 @@ input:focus {
   outline: none;
   width: 100px;
   padding: 0 1em;
-  min-height: 2em;
+  min-height: 2.449em;
   cursor: pointer;
   border-radius: 0 .5em .5em 0;
   color: white;
