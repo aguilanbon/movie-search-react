@@ -78,7 +78,7 @@ function SearchBar({ fetchMovies, searchMovie, discoverMovies }) {
                         className={searchBorder === 'set-border' ? 'set-border' : ''}
                         type="text"
                         name=""
-                        id=""
+                        id="search"
                         placeholder="type movie title"
                         value={searchTerm}
                         onChange={(e) => {

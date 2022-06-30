@@ -60,11 +60,11 @@ a {
   z-index: 999;
   height: auto;
   width: 100%;
-  background-color:white;
+  background-color: white;
   text-align: left;
-  font-size: .65rem;
+  font-size: .8rem;
   display: block;
-  padding-bottom: 2em;
+  padding-bottom: 1em;
   border-radius: 0 0 5px 5px;
 }
 
@@ -91,6 +91,7 @@ input {
   border-radius: .5em 0 0 .5em;
   border: 0;
   padding-left: 1em;
+  width: 35vw;
 }
 
 input:focus {
@@ -257,7 +258,7 @@ button p {
   padding-top: 1.5em;
 }
 
-.right-details h3{
+.right-details h3 {
   font-size: 1.8rem;
 }
 
@@ -315,6 +316,10 @@ button p {
   .movie-container {
     min-width: 90%;
   }
+
+  input {
+    width: 50vw;
+  }
 }
 
 @media only screen and (max-width: 481px) {
@@ -343,23 +348,28 @@ button p {
   .details-container {
     font-size: .8em;
   }
+
   .right-details-two {
-  padding-top: .5em;
+    padding-top: .5em;
   }
 
-  .right-details h3{
-  font-size: 1rem;
-}
+  .right-details h3 {
+    font-size: 1rem;
+  }
 
-.movie-info-container h1 {
-  font-style: italic;
-  font-size: .8rem;
-}
+  .movie-info-container h1 {
+    font-style: italic;
+    font-size: .8rem;
+  }
 
-.suggestions p {
-  padding: .3em 2em;
-  font-size: .5rem;
-}
+  .suggestions p {
+    padding: .3em 2em;
+    font-size: .7rem;
+  }
+
+  input {
+    width: 55vw;
+  }
 }
 
 @media only screen and (max-width: 424px) {
