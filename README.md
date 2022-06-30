@@ -9,6 +9,7 @@ github pages: https://aguilanbon.github.io/movie-search-react/
 React UseState  
 React UseEffect  
 React Router
+Framer Motion
 API's  
 
 ### `npm install`
