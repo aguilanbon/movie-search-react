@@ -19,6 +19,7 @@ function SearchBar({ fetchMovies, searchMovie, discoverMovies }) {
         const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=84a074e905a08c91f14ba891ba4e57bc&language=en-US&page=1&include_adult=false&query=${title}&total_results=5`)
         const data = await response.json()
         setSuggestedMovies(data.results)
+        console.log(data);
     }
 
     const handleSuggestions = (searchValue) => {
@@ -80,15 +81,18 @@ function SearchBar({ fetchMovies, searchMovie, discoverMovies }) {
                         }}
                     />
                     <div ref={menuRef} className={suggestionsState === 'hidden' ? `search-suggestions hidden` : 'search-suggestions'}>
-                        {suggestedMovies.slice(0, 10).map(movies => (
-                            <p onClick={() => {
+                        {suggestedMovies.slice(0, 5).map(movies => (
+                            <div onClick={() => {
                                 searchMovie(movies.title)
                                 setSuggestionsState('hidden')
                                 setSearchBorder('')
                                 setQuery(movies.title)
                                 setSearchBorder('')
                                 setsearchTerm('')
-                            }} key={movies.id}>{movies.title}</p>
+                            }} key={movies.id} className='suggestion-list'>
+                                <img src={`https://image.tmdb.org/t/p/w92${movies.poster_path}`} alt="" style={{ height: '3rem', marginLeft: '.3rem', borderRadius: '5px' }} />
+                                <p>{movies.title}</p>
+                            </div>
                         ))}
                     </div>
                 </div>

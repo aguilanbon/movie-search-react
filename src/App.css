@@ -66,6 +66,8 @@ a {
   display: block;
   padding-bottom: 1em;
   border-radius: 0 0 5px 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .set-border {
@@ -77,9 +79,16 @@ a {
   opacity: .85;
 }
 
-.suggestions p:hover {
+.suggestion-list {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 1px;
+}
+
+.suggestion-list:hover {
+  background-color: rgb(236, 232, 232);
   cursor: pointer;
-  background-color: rgba(182, 179, 179, 0.3)
 }
 
 .hidden {
