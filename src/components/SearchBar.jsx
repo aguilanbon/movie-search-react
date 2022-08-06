@@ -19,7 +19,6 @@ function SearchBar({ fetchMovies, searchMovie, discoverMovies }) {
         const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=84a074e905a08c91f14ba891ba4e57bc&language=en-US&page=1&include_adult=false&query=${title}&total_results=5`)
         const data = await response.json()
         setSuggestedMovies(data.results)
-        console.log(data);
     }
 
     const handleSuggestions = (searchValue) => {
