@@ -83,7 +83,34 @@ a {
   display: flex;
   width: 100%;
   align-items: center;
-  margin-bottom: 1px;
+  margin-bottom: .3rem;
+}
+
+.suggestion-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestion-mini-details {
+  display: flex;
+  justify-content: space-between;
+  width: fit-content;
+  margin-left: .3rem;
+  color: #505a57;
+}
+
+.suggestion-mini-details #mov-rel {
+  font-size: .6rem;
+}
+
+.suggestion-mini-details #mov-rating {
+  font-size: .6rem;
+  display: flex;
+  align-items: center;
+}
+
+.suggestion-mini-details .star-logo {
+  height: .7rem;
 }
 
 .suggestion-list:hover {
